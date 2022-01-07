@@ -1,1 +1,2 @@
-web gunicorn myproject.wsgi
+web: gunicorn gettingstarted.wsgi
+web: gunicorn hello:app
