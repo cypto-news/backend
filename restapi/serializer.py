@@ -7,4 +7,4 @@ class NewsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         db_table = 'news' # KALO DB ERROR GANTI INI JADI "restapi_news"
         model = News
-        fields = ('id','title', 'description', 'date', 'urlImg')
+        fields = ('id','title', 'description', "source", "rhn",'date', 'urlImg')

@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'restSite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'nisnofpe',
-        'USER': 'nisnofpe',
-        'PASSWORD': 'R_UsKdchFoHIbBdCjDhv-M43RvzV7JgB',
+        'NAME': 'llhmsycl',
+        'USER': 'llhmsycl',
+        'PASSWORD': 'BXnk3yrOd31rKbry0o8Ea8MYyi8Zgkrk',
         'HOST': 'arjuna.db.elephantsql.com',
         'PORT': '5432',
         # 'API Key': 'b24a1e7d-9344-48d6-ae9b-aa3d5536cfef',
