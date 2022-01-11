@@ -51,12 +51,14 @@ def create_news(request):
         return JsonResponse(news_data.errors, status=status.HTTP_400_BAD_REQUEST)
  
 # DELETE API REQUEST
+@csrf_exempt
 def delete_news(request, pk):
     if request.method == 'DELETE': 
         news = News.objects.get(pk=pk) # find news by pk (id) 
         news.delete() 
         return JsonResponse({'message': 'news was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT) 
-    
+
+@csrf_exempt
 def delete_all_news(request):
     if request.method == 'DELETE':
         count = News.objects.all().delete()
