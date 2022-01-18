@@ -85,13 +85,10 @@ class apiMarket:
     def view_market(request):
         if request.method == 'GET':
             market = Market.objects.all().order_by('date')
-            
             coin = request.GET.get('coin', None)
             if coin is not None:
-                market = market.filter(title__icontains=coin)
-                
+                market = market.filter(coin__icontains=coin)
             market_serializer = MarketSerializer(market, many=True)
-                
             return JsonResponse(market_serializer.data, safe=False)
         else:
             return JsonResponse(status=status.HTTP_400_BAD_REQUEST)
