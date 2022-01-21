@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'whitenoise.runserver_nostatic',
-    'herokuapp',
+    # 'whitenoise.runserver_nostatic',
+    # 'herokuapp',
 ]
 
 MIDDLEWARE = [
@@ -60,8 +60,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = (
-  'http://localhost:3030',
-  'http://localhost:8000',
+  'http://localhost:3000',
 )
 
 ROOT_URLCONF = 'restSite.urls'
