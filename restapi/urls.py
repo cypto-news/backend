@@ -25,6 +25,7 @@ urlpatterns = [
     
     # class market
     re_path(r'^market/list_coin$', apiMarket.list_coin),
+    re_path(r'^market/trend_market$', apiMarket.trend_market),
     re_path(r'^market/view_market$', apiMarket.view_market),
     re_path(r'^market/create_market$', apiMarket.create_market),
     re_path(r'^market/delete_market/(?P<pk>[0-9]+)$', apiMarket.delete_market),

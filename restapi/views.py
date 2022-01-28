@@ -1,6 +1,6 @@
 # from rest_framework import viewsets
 # from django.shortcuts import render
-
+import datetime
 from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser 
 from rest_framework import status
@@ -88,6 +88,14 @@ class apiMarket:
             coin = request.GET.get('coin', None)
             if coin is not None:
                 market = market.filter(coin__icontains=coin)
+            market_serializer = MarketSerializer(market, many=True)
+            return JsonResponse(market_serializer.data, safe=False)
+        else:
+            return JsonResponse(status=status.HTTP_400_BAD_REQUEST)
+        
+    def trend_market(request):
+        if request.method == 'GET':
+            market = Market.objects.filter(date__gte=datetime.date(2022, 1,17))
             market_serializer = MarketSerializer(market, many=True)
             return JsonResponse(market_serializer.data, safe=False)
         else:
