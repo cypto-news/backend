@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-+o$y^2f+)3-sb6y)@qnk4h$-+p3#&i8wi=w=p6!v)do79-e__g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+# ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'http://localhost:8000']
+
+ALLOWED_HOSTS=['*']
 
 
 # Application definition
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     # 'whitenoise.runserver_nostatic',
     # 'herokuapp',
 ]
@@ -53,7 +56,25 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:3030',
+# ]
+
+# CORS_ALLOWED_ORIGIN_REGEXES = [
+#     r"^https://\w+\.domain\.com$",
+# ]
+
+
+# CORS_ORIGIN_WHITELIST = (
+#   'http://localhost:3030',
+# )
 
 ROOT_URLCONF = 'restSite.urls'
 
@@ -82,9 +103,9 @@ WSGI_APPLICATION = 'restSite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'nisnofpe',
-        'USER': 'nisnofpe',
-        'PASSWORD': 'R_UsKdchFoHIbBdCjDhv-M43RvzV7JgB',
+        'NAME': 'llhmsycl',
+        'USER': 'llhmsycl',
+        'PASSWORD': 'BXnk3yrOd31rKbry0o8Ea8MYyi8Zgkrk',
         'HOST': 'arjuna.db.elephantsql.com',
         'PORT': '5432',
         # 'API Key': 'b24a1e7d-9344-48d6-ae9b-aa3d5536cfef',
